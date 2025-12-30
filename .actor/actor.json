@@ -1,0 +1,10 @@
+{
+    "actorSpecification": 1,
+    "name": "ai-brand-sentinel",
+    "title": "AI Brand Sentinel (Multilingual)",
+    "version": "1.0",
+    "storages": {
+        "dataset": "./dataset_schema.json"
+    },
+    "output": "./output_schema.json"
+}

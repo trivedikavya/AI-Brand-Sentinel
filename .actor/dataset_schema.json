@@ -1,0 +1,35 @@
+{
+    "actorSpecification": 1,
+    "title": "AI Sentinel Results",
+    "description": "Multilingual analysis & drafts.",
+    "fields": {
+        "type": "object",
+        "properties": {
+            "original_feedback": { "title": "Original", "type": "string" },
+            "detected_lang": { "title": "Lang", "type": "string" },
+            "translated_en": { "title": "English View", "type": "string" },
+            "sentiment_label": { "title": "Sentiment", "type": "string" },
+            "ai_reply_native": { "title": "Draft Reply", "type": "string" },
+            "lingo_test_score": { "title": "Quality Score", "type": "number" },
+            "lingo_test_status": { "title": "Safety Check", "type": "string" }
+        }
+    },
+    "views": {
+        "overview": {
+            "title": "Dashboard",
+            "transformation": {
+                "fields": ["original_feedback", "detected_lang", "sentiment_label", "ai_reply_native", "lingo_test_status"]
+            },
+            "display": {
+                "component": "table",
+                "properties": {
+                    "original_feedback": { "label": "Feedback" },
+                    "detected_lang": { "label": "Lang" },
+                    "sentiment_label": { "label": "Sentiment" },
+                    "ai_reply_native": { "label": "Reply" },
+                    "lingo_test_status": { "label": "Safety" }
+                }
+            }
+        }
+    }
+}

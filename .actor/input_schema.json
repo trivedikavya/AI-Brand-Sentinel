@@ -1,0 +1,34 @@
+{
+    "title": "AI Brand Sentinel Input",
+    "type": "object",
+    "schemaVersion": 1,
+    "properties": {
+        "comments": {
+            "title": "Raw Feedback (CSV/Text)",
+            "type": "string",
+            "description": "Paste feedback text or comma-separated comments here.",
+            "editor": "textarea",
+            "prefill": "Este producto es excelente, The service was terrible, Das ist gut"
+        },
+        "lingoApiKey": {
+            "title": "Lingo API Key (Optional)",
+            "type": "string",
+            "description": "Enter your own Lingo.dev API Key. If left empty, the Premium Managed Key will be used (Pay-Per-Use rates apply).",
+            "editor": "textfield",
+            "isSecret": true
+        },
+        "generateReply": {
+            "title": "Generate AI Replies?",
+            "type": "boolean",
+            "description": "If enabled, the AI will draft responses in the user's native language.",
+            "default": true
+        },
+        "enableLingoTest": {
+            "title": "Enable Round-Trip Verification?",
+            "type": "boolean",
+            "description": "Translates the native reply BACK to English to verify accuracy/safety.",
+            "default": true
+        }
+    },
+    "required": ["comments"]
+}
