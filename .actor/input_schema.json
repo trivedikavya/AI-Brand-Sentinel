@@ -1,34 +1,29 @@
 {
-    "title": "AI Brand Sentinel Input",
+    "title": "AI Brand Sentinel (Lingo Powered)",
     "type": "object",
     "schemaVersion": 1,
     "properties": {
         "comments": {
-            "title": "Raw Feedback (CSV/Text)",
+            "title": "Paste Global Feedbacks",
             "type": "string",
-            "description": "Paste feedback text or comma-separated comments here.",
+            "description": "Paste your customer reviews here. Separate each review with a comma (,).",
             "editor": "textarea",
-            "prefill": "Este producto es excelente, The service was terrible, Das ist gut"
+            "prefill": "I love this product, Este producto es terrible, C'est correct"
         },
         "lingoApiKey": {
-            "title": "Lingo API Key (Optional)",
+            "title": "Lingo API Key",
             "type": "string",
-            "description": "Enter your own Lingo.dev API Key. If left empty, the Premium Managed Key will be used (Pay-Per-Use rates apply).",
+            "description": "Your API Key from Lingo.dev (Required for translation).",
             "editor": "textfield",
             "isSecret": true
         },
         "generateReply": {
-            "title": "Generate AI Replies?",
+            "title": "Auto-Generate Replies",
             "type": "boolean",
-            "description": "If enabled, the AI will draft responses in the user's native language.",
-            "default": true
-        },
-        "enableLingoTest": {
-            "title": "Enable Round-Trip Verification?",
-            "type": "boolean",
-            "description": "Translates the native reply BACK to English to verify accuracy/safety.",
+            "description": "Generate polite responses in the customer's native language.",
+            "editor": "checkbox",
             "default": true
         }
     },
-    "required": ["comments"]
+    "required": ["comments", "lingoApiKey"]
 }

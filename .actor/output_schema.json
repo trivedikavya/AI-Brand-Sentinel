@@ -1,0 +1,25 @@
+{
+    "actorOutputSchemaVersion": 1,
+    "title": "AI Brand Sentinel Report",
+    "description": "Download analysis results.",
+    "properties": {
+        "dashboard_view": {
+            "type": "string",
+            "title": "📊 View Dashboard",
+            "description": "Clean table of feedback and replies.",
+            "template": "{{links.apiDefaultDatasetUrl}}/items?view=overview"
+        },
+        "full_json": {
+            "type": "string",
+            "title": "🔌 Download JSON (Full)",
+            "description": "Get the exact JSON structure with scores and translations.",
+            "template": "{{links.apiDefaultDatasetUrl}}/items?format=json"
+        },
+        "export_csv": {
+            "type": "string",
+            "title": "📄 Download CSV",
+            "description": "Best for spreadsheets.",
+            "template": "{{links.apiDefaultDatasetUrl}}/items?format=csv"
+        }
+    }
+}

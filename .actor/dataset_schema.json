@@ -1,33 +1,67 @@
 {
     "actorSpecification": 1,
-    "title": "AI Sentinel Results",
-    "description": "Multilingual analysis & drafts.",
+    "title": "AI Brand Sentinel Results",
+    "description": "Multilingual analysis and safety scores.",
     "fields": {
         "type": "object",
         "properties": {
-            "original_feedback": { "title": "Original", "type": "string" },
-            "detected_lang": { "title": "Lang", "type": "string" },
-            "translated_en": { "title": "English View", "type": "string" },
-            "sentiment_label": { "title": "Sentiment", "type": "string" },
-            "ai_reply_native": { "title": "Draft Reply", "type": "string" },
-            "lingo_test_score": { "title": "Quality Score", "type": "number" },
-            "lingo_test_status": { "title": "Safety Check", "type": "string" }
+            "original_feedback": { 
+                "title": "Original Feedback", 
+                "type": "string", 
+                "description": "The raw customer text" 
+            },
+            "detected_language": { 
+                "title": "Language", 
+                "type": "string", 
+                "description": "Language code (es, en, ja)" 
+            },
+            "translated_en": { 
+                "title": "English Translation", 
+                "type": "string", 
+                "description": "Normalized English text" 
+            },
+            "sentiment_label": { 
+                "title": "Sentiment", 
+                "type": "string", 
+                "description": "Positive/Negative/Neutral" 
+            },
+            "ai_reply_native": { 
+                "title": "AI Reply (Native)", 
+                "type": "string", 
+                "description": "Drafted response in user's language" 
+            },
+            "lingo_test_status": { 
+                "title": "Safety Status", 
+                "type": "string", 
+                "description": "Safe/Unsafe flag" 
+            },
+            "lingo_test_score": { 
+                "title": "Safety Score", 
+                "type": "number", 
+                "description": "Confidence score (0.0 to 1.0)" 
+            }
         }
     },
     "views": {
         "overview": {
             "title": "Dashboard",
             "transformation": {
-                "fields": ["original_feedback", "detected_lang", "sentiment_label", "ai_reply_native", "lingo_test_status"]
+                "fields": [
+                    "original_feedback", 
+                    "detected_language", 
+                    "sentiment_label", 
+                    "ai_reply_native", 
+                    "lingo_test_status"
+                ]
             },
             "display": {
                 "component": "table",
                 "properties": {
-                    "original_feedback": { "label": "Feedback" },
-                    "detected_lang": { "label": "Lang" },
-                    "sentiment_label": { "label": "Sentiment" },
-                    "ai_reply_native": { "label": "Reply" },
-                    "lingo_test_status": { "label": "Safety" }
+                    "original_feedback": { "label": "🗣️ Feedback" },
+                    "detected_language": { "label": "🏳️ Lang" },
+                    "sentiment_label": { "label": "❤️ Sentiment" },
+                    "ai_reply_native": { "label": "🤖 Draft Reply" },
+                    "lingo_test_status": { "label": "🛡️ Safety" }
                 }
             }
         }
